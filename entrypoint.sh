@@ -22,5 +22,4 @@ if test -n "$2"; then
 fi
 
 go build -o "$TARGET" -installsuffix cgo -tags netgo -ldflags '-w -s'  .
-scanelf -BF '%o#F' "$TARGET" | grep '^ET_EXEC$'
 upx $UPX_OPTS "$TARGET"

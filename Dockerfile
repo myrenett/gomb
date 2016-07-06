@@ -9,8 +9,7 @@ RUN apk upgrade --no-cache --available && \
 		ca-certificates \
 		git \
 		"go=${GO_VERSION}" \
-		openssl \
-		scanelf
+		openssl
 
 ADD https://github.com/lalyos/docker-upx/releases/download/v${UPX_VERSION}/upx /bin/upx
 RUN chmod +x /bin/upx
