@@ -29,11 +29,12 @@ Relevant environment variables:
     $ mdir -p go
     $ docker run -v "$PWD/go":/go:rw -u $(id -u) myrenett/gomb github.com/myrenett/examples/hello-server
 
-Comparing the file size for this example from the result of a normal `go build`, we can see a 4x decrease:
+Comparing the file size for this example from the result of a normal `go build` with GOOS=linux, we can see a 4x
+decrease:
 
     $ git clone
     $ du -h examples/hello-server/hello-server
-    7.3M	examples/hello-server/hello-server
+    7.4M	examples/hello-server/hello-server
     $ du -h go/bin/hello-server
     1.6M	go/bin/hello-server
 
