@@ -32,7 +32,6 @@ Relevant environment variables:
 Comparing the file size for this example from the result of a normal `go build` with GOOS=linux, we can see a 4x
 decrease:
 
-    $ git clone
     $ du -h examples/hello-server/hello-server
     7.4M	examples/hello-server/hello-server
     $ du -h go/bin/hello-server
