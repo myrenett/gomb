@@ -15,14 +15,16 @@ checked out. Projects with a more complex build process than simply `go build` w
 
 ## Usage
 
-    $ docker run -v WORKDIR:/go:rw -u UID[:GID][ -e GO_GET=no] myrenett/gomb IMPORT_PATH[ GIT_REF|GIT_SHA1]
+    $ docker run -v WORKDIR:/go:rw -u $(id -u) [ -e GO_GET=1] myrenett/gomb IMPORT_PATH[ GIT_REF|GIT_SHA1]
 
 
-Where user referred to by `UID` must have read/write permissions to `WORKDIR`.
+Where user referred to by `-u` must have read/write permissions to `WORKDIR`.
 
 Relevant environment variables:
-- `GO_GET`: Set to "no" to skip the `go get -d IMPORT_PATH` step. A pre-populate `WORKDIR/src` should be provided.
-- `UPX_OPS`: See `docker run --entrypoint upx myrenett/gomb --help` for available options.
+- `GO_GET`: Set to "1" to run `go get -d IMPORT_PATH`.
+- `GO_FLAGS`: Flags to pass to the `go build` command. The default strips debug symbols and disables dynamic links to C
+  libraries for the standard library. See `docker run --entrypoint go myrenett/gomb help build` for available options.
+- `UPX_FLAGS`: See `docker run --entrypoint upx myrenett/gomb --help` for available options.
 
 # Example
 
