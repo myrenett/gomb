@@ -1,0 +1,7 @@
+sut:
+  build: .
+  command: github.com/myrenett/examples/hello-server
+  environment:
+    - GO_GET=1
+  volumes:
+    - /go
