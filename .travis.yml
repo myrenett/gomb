@@ -1,0 +1,13 @@
+sudo: required
+
+services:
+  - docker
+
+before_script:
+  - docker pull golang:1.7-alpine
+
+script:
+  - docker-compose -f docker-compose.test.yml up --build sut
+
+after_script:
+  - docker-compose -f docker-compose.test.yml down
