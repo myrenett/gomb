@@ -3,6 +3,7 @@ Go minified binaries.
 
 [![Build Status](https://travis-ci.org/myreentt/gomb.svg?branch=master)](https://travis-ci.org/myrenett/gomb)
 [![license](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
+[![Stories in Ready](https://badge.waffle.io/myrenett/all.svg?label=ready&title=Ready)](http://waffle.io/myrenett/all)
 
 Inspired by this [blog post](https://blog.filippo.io/shrink-your-go-binaries-with-this-one-weird-trick/), gomb is a small docker container that relies on [Alpine linux](https://www.alpinelinux.org/) and [UPX](http://upx.sourceforge.net/) to build minified static binaries for Go applications for use in e.g. scratch docker container.
 
